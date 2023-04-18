@@ -82,11 +82,9 @@ public class CheckpointServiceTest {
     @Test
     void Given_day_of_moth_between_30_and_1_and_last_checkin_is_not_null_When_invoke_checkout_Then_IllegalArgumentException(){
         CheckpointDTO checkpointDTO = new CheckpointDTO("prueba", "prueba", 2);
-
         Checkout checkout = new Checkout(checkpointDTO.facility, checkpointDTO.driver, checkpointDTO.dayOfMonth);
 
         Mockito.when(checkpointPort.findLastCheckin(checkpointDTO.driver, checkpointDTO.facility)).thenReturn(new Checkin(checkpointDTO.facility, checkpointDTO.driver,  checkpointDTO.dayOfMonth));
-
         Assertions.assertEquals("check out added", checkpointService.checkout(checkpointDTO));
         Mockito.verify(checkpointPort).findLastCheckin(checkpointDTO.driver, checkpointDTO.facility);
         Mockito.verify(checkpointPort).saveCheckout(checkout);
