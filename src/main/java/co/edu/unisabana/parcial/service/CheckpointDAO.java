@@ -16,9 +16,7 @@ public class CheckpointDAO implements CheckpointPort {
   private CheckpointRepository checkpointRepository;
 
   @Override
-  public void saveCheckin(Checkin checkin) {
-    checkpointRepository.save(Checkpoint.fromCheckin(checkin));
-  }
+  public void saveCheckin(Checkin checkin) {checkpointRepository.save(Checkpoint.fromCheckin(checkin)); }
 
   @Override
   public void saveCheckout(Checkout checkout) {
