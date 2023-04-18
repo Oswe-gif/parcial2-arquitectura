@@ -1,4 +1,4 @@
-package co.edu.unisabana.parcial;
+package co.edu.unisabana.parcial.service;
 
 import co.edu.unisabana.parcial.controller.dto.CheckpointDTO;
 import co.edu.unisabana.parcial.service.CheckpointService;
@@ -41,7 +41,7 @@ public class CheckpointServiceTest {
     }
 
     @Test
-    void Given_day_of_moth_between_30_and_1_When_invoke_checkin_Then_IllegalArgumentException(){
+    void Given_day_of_moth_between_30_and_1_When_invoke_checkin_Then_success_message(){
         CheckpointDTO checkpointDTO = new CheckpointDTO("prueba", "prueba", 2);
 
         Checkin checkin = new Checkin(checkpointDTO.facility, checkpointDTO.driver, checkpointDTO.dayOfMonth);
@@ -80,7 +80,7 @@ public class CheckpointServiceTest {
     }
 
     @Test
-    void Given_day_of_moth_between_30_and_1_and_last_checkin_is_not_null_When_invoke_checkout_Then_IllegalArgumentException(){
+    void Given_day_of_moth_between_30_and_1_and_last_checkin_is_not_null_When_invoke_checkout_Then_success_message(){
         CheckpointDTO checkpointDTO = new CheckpointDTO("prueba", "prueba", 2);
         Checkout checkout = new Checkout(checkpointDTO.facility, checkpointDTO.driver, checkpointDTO.dayOfMonth);
 
