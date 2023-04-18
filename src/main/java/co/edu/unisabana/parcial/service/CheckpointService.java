@@ -5,10 +5,12 @@ import co.edu.unisabana.parcial.service.model.Checkin;
 import co.edu.unisabana.parcial.service.model.Checkout;
 import co.edu.unisabana.parcial.service.port.CheckpointPort;
 import lombok.AllArgsConstructor;
+import lombok.Generated;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+
 public class CheckpointService {
 
   private CheckpointPort checkpointPort;
